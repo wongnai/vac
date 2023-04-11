@@ -42,7 +42,6 @@ func Switch(ctx *cli.Context) (int, error) {
 			func(i int) string {
 				return awsSecretEngines[i]
 			},
-			fuzzyfinder.WithDefaultIndex(indexOf(s.Current.Engine, awsSecretEngines)),
 		)
 		if err != nil {
 			return 1, err
@@ -63,7 +62,6 @@ func Switch(ctx *cli.Context) (int, error) {
 			func(i int) string {
 				return roles[i]
 			},
-			fuzzyfinder.WithDefaultIndex(indexOf(s.Current.Role, roles)),
 		)
 		if err != nil {
 			return 1, err

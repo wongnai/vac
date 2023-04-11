@@ -70,7 +70,7 @@ func exit(exitCode int, err error) cli.ExitCoder {
 func ExecWrapper(f func(ctx *cli.Context) (int, error)) cli.ActionFunc {
 	return func(ctx *cli.Context) error {
 		if err := mlock.LockMemory(); err != nil {
-			return exit(1, fmt.Errorf("error locking vac memory: %w", err))
+			log.Warn("Failed to lock memory: ", err)
 		}
 		return exit(f(ctx))
 	}
