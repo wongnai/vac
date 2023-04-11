@@ -45,8 +45,9 @@ func configure(ctx *cli.Context) (*Config, error) {
 		StatePath: statePath,
 
 		AuthInfo: client.AuthInfo{
-			Method:   ctx.String("auth"),
-			RoleName: ctx.String("auth-k8s-role"),
+			Method:    ctx.String("auth"),
+			MountPath: ctx.String("auth-k8s-mount"),
+			RoleName:  ctx.String("auth-k8s-role"),
 		},
 	}, nil
 }
