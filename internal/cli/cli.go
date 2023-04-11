@@ -7,7 +7,7 @@ import (
 
 	cli "github.com/urfave/cli/v2"
 
-	"github.com/mvisonneau/vac/internal/cmd"
+	"github.com/wongnai/vac/internal/cmd"
 )
 
 // Run handles the instanciation of the CLI application

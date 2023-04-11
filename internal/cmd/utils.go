@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/mvisonneau/vac/pkg/client"
+	"github.com/wongnai/vac/pkg/client"
 	"time"
 
 	"github.com/hashicorp/go-secure-stdlib/mlock"

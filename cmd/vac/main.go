@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/mvisonneau/vac/internal/cli"
+	"github.com/wongnai/vac/internal/cli"
 )
 
 var version = ""

@@ -1,4 +1,4 @@
-module github.com/mvisonneau/vac
+module github.com/wongnai/vac
 
 go 1.20
 

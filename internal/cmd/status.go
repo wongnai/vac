@@ -9,8 +9,8 @@ import (
 	cli "github.com/urfave/cli/v2"
 	"github.com/xeonx/timeago"
 
-	"github.com/mvisonneau/vac/pkg/client"
-	"github.com/mvisonneau/vac/pkg/state"
+	"github.com/wongnai/vac/pkg/client"
+	"github.com/wongnai/vac/pkg/state"
 )
 
 // Status ..

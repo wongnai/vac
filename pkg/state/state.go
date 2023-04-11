@@ -10,7 +10,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/mvisonneau/vac/pkg/client"
+	"github.com/wongnai/vac/pkg/client"
 )
 
 // State ..
