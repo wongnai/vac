@@ -5,12 +5,12 @@ REPOSITORY    := mvisonneau/$(NAME)
 
 .PHONY: fmt
 fmt: ## Format source code
-	go run mvdan.cc/gofumpt@v0.4.0 -w $(shell git ls-files **/*.go)
-	go run github.com/daixiang0/gci@v0.9.1 write -s standard -s default -s "prefix(github.com/mvisonneau)" .
+	go run mvdan.cc/gofumpt@v0.6.0 -w $(shell git ls-files **/*.go)
+	go run github.com/daixiang0/gci@v0.13.4 write -s standard -s default -s "prefix(github.com/mvisonneau)" .
 
 .PHONY: lint
 lint: ## Run all lint related tests upon the codebase
-	go run github.com/golangci/golangci-lint/cmd/golangci-lint@v1.51.1 run -v --fast
+	go run github.com/golangci/golangci-lint/cmd/golangci-lint@v1.57.2 run -v --fast
 
 .PHONY: test
 test: ## Run the tests against the codebase
@@ -30,8 +30,13 @@ install: ## Build and install locally the binary (dev purpose)
 build: ## Build the binaries using local GOOS
 	go build ./cmd/$(NAME)
 
+.PHONY: release
+release: ## Build & release the binaries (stable)
+	git tag -d edge
+	go run github.com/goreleaser/goreleaser@v1.25.1 release --clean
+
 .PHONY: prerelease
-prerelease: setup ## Build & prerelease the binaries (edge)
+prerelease: ## Build & prerelease the binaries (edge)
 	@\
 		REPOSITORY=$(REPOSITORY) \
 		NAME=$(NAME) \
